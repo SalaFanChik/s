@@ -104,7 +104,7 @@ async def apple_game_menu_2(call: CallbackQuery, callback_data: dict):
     for i in data:
         if i['user_id'] == call.message.chat.id:
             win_amount = i['stavka']
-    if get_user(message.chat.id)[1] > win_amount:
+    if int(get_user(call.message.chat.id)[1]) > int(win_amount):
         if color == 0:
             win_amount = int(win_amount) * 2 
             update_balance(call.message.chat.id, int(win_amount))
@@ -126,7 +126,7 @@ async def apple_game_menu_3(call: CallbackQuery, callback_data: dict):
     for i in data:
         if i['user_id'] == call.message.chat.id:
             win_amount = i['stavka']
-    if get_user(message.chat.id)[1] > win_amount:
+    if int(get_user(call.message.chat.id)[1]) > int(win_amount):
         if color == 0:
             win_amount = int(win_amount) * 2 
             update_balance(call.message.chat.id, int(win_amount))
